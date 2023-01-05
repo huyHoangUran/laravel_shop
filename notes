@@ -1,0 +1,22 @@
+day2:
+-create file tabble with "php artisan make:migration create_listings_table"
+-create tabble with "php artisan make:migration migrate"
+
+-   tạo bản ghi user bằng lệnh "php artisan db:seed"
+    -update database "php artisan migrate:refresh --seed"
+    -create and use files factory and seeder
+    -make model "php artisan make:model"
+-   sử dụng view bằng php laravel
+Ngày 3: 
+-giao diện
+Ngay 4 cách merg các thuộc tính css
+<div {{ $attributes->merge(['class'=>'bg-gray-50 border border-gray-200 rounded p-6']) }} >
+    {{ $slot }}
+</div>
+file được kế thừa có thể thêm các thuộc tính css khác
+Ngày 5: Tag filter , search filter , file chạy thời gian thực , tạo giao diện post job
+câu hỏi tại sao phải đổi chỗ route
+Ngày 7: validation form , security : csrf, chữa lỗi không thêm được trên file AppService, success add new job , Alpine.js (show 2s)
+    -các input nhập đúng sẽ được giữ nguyên khi submit 
+Ngày 8 phân trang có sẵn trong laravel và upload file images
+    tạo link bằng artisan (php artisan storage:link)
