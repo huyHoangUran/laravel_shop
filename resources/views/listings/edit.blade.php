@@ -6,12 +6,12 @@
                     <h2 class="text-2xl font-bold uppercase mb-1">
                         Edit a Gig
                     </h2>
-                    <p class="mb-4">Edit {{ $listing->title }}</p>
+                    <p class="mb-4">Edit: {{ $listing->title }}</p>
                 </header>
 
                 <form method="post" action="/listings/{{ $listing->id }}" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
+                    @method('put')
                     <div class="mb-6">
                         <label
                             for="company"

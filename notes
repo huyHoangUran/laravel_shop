@@ -20,3 +20,16 @@ Ngày 7: validation form , security : csrf, chữa lỗi không thêm được t
     -các input nhập đúng sẽ được giữ nguyên khi submit 
 Ngày 8 phân trang có sẵn trong laravel và upload file images
     tạo link bằng artisan (php artisan storage:link)
+
+
+
+    Tạo 2 mã giảm giá
+- GIảm giá theo số tiền
+ + Trong 1 tháng
+ + Đơn tối thiểu 10000, tối đa 1000000
+ + Chỉ áp dụng cho 1 danh mục sản phẩm (tuỳ ý)
+ + Giới hạn mỗi user dùng 1 mã
+- Giảm giá theo %
+ + Trong 1 tuần
+ + Chỉ áp dụng cho 2 sản phẩm (tuỳ ý)
+ + Mỗi user chỉ dùng 2 mã

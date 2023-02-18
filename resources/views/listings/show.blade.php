@@ -46,11 +46,16 @@
                         </div>
                     </div>
                 </x-card>
-                <x-card class="mt-4 p2 flex space-x-6">
+                {{-- <x-card class="mt-4 p2 flex space-x-6">
                     <a href="/listings/{{ $listing->id }}/edit">
                         <i class="fa-solid fa-pencil"></i>Edit
                     </a>
-                </x-card>
+                    <form method="POST" action="/listings/{{$listing->id}}">
+                        @csrf
+                        @method('delete')
+                        <button class="text-red-500 " onclick="return confirm('are you sure')"> <i class="fa-solid fa-trash"></i> DELETE</button>
+                    </form>
+                </x-card> --}}
             </div>
 
 

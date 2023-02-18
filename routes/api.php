@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\api\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +15,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/postss', function () {
-//     return response()->json([
-//         'posts' => [
-//             [
-//                 'title' => 'header',
-//                 'name' => 'Hoang'
-//             ]
-//         ]
-//     ]);
-// });
+Route::get('/postss', function () {
+    return response()->json([
+        'posts' => [
+            [
+                'title' => 'header',
+                'name' => 'Hoang'
+            ]
+        ]
+    ]);
+});
+
+// Route::apiResource('/all',[lis])
+Route::get('/all', [ListingController::class, 'index']);
+
+// Route::get()
 
 
 
