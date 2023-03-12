@@ -17,11 +17,11 @@ class ListingController extends Controller
      */
     public function index()
     {
-        
+
         $results = DB::table('listings')
-        ->join('users', 'users.id', '=', 'listings.user_id')
-        ->where('users.id', '=', 2)
-        ->get('title');
+            ->join('users', 'users.id', '=', 'listings.user_id')
+            ->where('users.id', '=', 1)
+            ->get();
         return $results;
     }
 
