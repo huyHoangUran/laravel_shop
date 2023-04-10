@@ -21,7 +21,7 @@
                         colors: {
                             laravel: "#ef3b2d",
                         },
-                    },
+                    },  
                 },
             };
         </script>

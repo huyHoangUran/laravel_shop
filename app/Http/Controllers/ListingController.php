@@ -49,8 +49,8 @@ class ListingController extends Controller
         if ($request->hasFile('logo')) {
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
-
-        $formFields['user_id']= auth()->id();
+        // dd($formFields['logo']);
+        $formFields['user_id'] = auth()->id();
 
         Listing::create($formFields);
         return redirect('/')->with('message', 'Listing created successfully!');
@@ -62,15 +62,15 @@ class ListingController extends Controller
     {
         return view('listings.edit', ['listing' => $listing]);
     }
-    
+
     // store listing data
     public function update(Request $request, Listing $listing)
     {
 
 
         // Make sure logged in user in owner
-        if($listing->user_id != auth()->id()){
-            abort(403,'Unauthorized Action');
+        if ($listing->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
         }
         // dd($request->file('logo'));
         $formFields = $request->validate([
@@ -91,18 +91,19 @@ class ListingController extends Controller
 
         // Session::flash('message')
     }
-    public function destroy(Listing $listing){
-        if($listing->user_id != auth()->id()){
-            abort(403,'Unauthorized Action');
+    public function destroy(Listing $listing)
+    {
+        if ($listing->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
         }
         $listing->delete();
-        return redirect('/listings/manage')->with('message','Listing deleted successfully !');
-
+        return redirect('/listings/manage')->with('message', 'Listing deleted successfully !');
     }
 
     // Manage listings
-    public function manage(){
-        return view('listings.manage',['listings'=>auth()->user()->listings()->get()]);
+    public function manage()
+    {
+        return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
     }
 }
 /**Quy ước đặt tên
